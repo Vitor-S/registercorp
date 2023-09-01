@@ -28,10 +28,19 @@ export const MyButtonStyled = styled.div`
     
     #tag{
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
         align-items: center;
-        min-width: max(150px, 20vw); 
-        min-height: 50px;
+        min-width: max(150px, 20vw);
+        min-height: 60px;
+        padding: 3% 0;
+        font-weight: bold;
+        font-size: max(13px, 1.2vw);
+        
+        input{
+            width: 100%;
+            height: 40%;
+        }
     }
     
     #icon{
@@ -60,6 +69,6 @@ export const TagStyled = styled.div`
         align-items: center;
         justify-content: space-around;
         padding: 15px 20px;
-        font-size: max(13px, 1.5vw)
+        font-size: max(13px, 1.5vw);
     }
 `   

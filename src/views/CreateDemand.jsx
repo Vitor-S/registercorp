@@ -24,6 +24,7 @@ export default function CreateDemand() {
 
     const [products, setProducts] = useState([])
     const [demand, setDemand] = useState([]);
+    const [pairInputs, setPairInputs] = useState({}); // Use um objeto para rastrear o número de pares para cada produto
 
     useEffect(() => {
         // Crie uma função para buscar os documentos da coleção 'Products'
@@ -45,7 +46,20 @@ export default function CreateDemand() {
         }
     };
 
-    // alert(new Date())
+    const handleChangePairs = (event, prod) => {
+        const updatedPairs = { ...pairInputs };
+    
+        if (event.target.value === "") {
+            // Se o valor do input for vazio, remova a entrada do estado pairInputs
+            delete updatedPairs[prod.id];
+        } else {
+            // Caso contrário, atualize o estado pairInputs com o novo valor
+            updatedPairs[prod.id] = event.target.value;
+        }
+    
+        setPairInputs(updatedPairs);
+    }
+    
 
     const handleCreateDemand = () => {
         Swal.fire({
@@ -56,21 +70,28 @@ export default function CreateDemand() {
             showCancelButton: true,
             cancelButtonText: "Cancelar",
         }).then(res => {
-            if (res.isConfirmed && demand.length != 0) {
-
-                addToHistory(demand)
-            }else if(res.isConfirmed && demand.length == 0){
-                notifyWarning("Você não pode criar uma demanda sem produtos")
+            if (res.isConfirmed && demand.length !== 0 && demand.length === Object.keys(pairInputs).length) {
+                // Adicione a chave "quantidade" para cada produto em demand
+                const demandWithQuantity = demand.map((prod) => ({
+                    ...prod,
+                    quantidade: pairInputs[prod.id] + " pares"
+                }));
+                addToHistory(demandWithQuantity, pairInputs);
+            } else if (res.isConfirmed && demand.length === 0) {
+                notifyWarning("Você não pode criar uma demanda sem produtos");
+            } else if (demand.length !== Object.keys(pairInputs).length) {
+                notifyWarning("Todos os produtos devem ter uma quantidade de pares");
             }
         })
     }
 
-    const addToHistory = async (data) => {
+    const addToHistory = async (data, pairsData) => {
         const collectionRef = collection(db, "History");
 
         try {
             const docRef = await addDoc(collectionRef, {
-                products: demand,
+                products: data,
+                pairs: pairsData,
                 datetime: new Date()
             });
 
@@ -95,7 +116,11 @@ export default function CreateDemand() {
                         <h1>Products</h1>
                         <div id='tags-container'>
                             {products.map((prod) => (
-                                <MyButton key={prod.id} icon={<AddIcon />} handleClick={() => handleToggle(prod)}>
+                                <MyButton
+                                    key={prod.id}
+                                    icon={<AddIcon />}
+                                    handleClick={() => handleToggle(prod)}
+                                >
                                     {prod.modelo}
                                 </MyButton>
                             ))}
@@ -105,8 +130,17 @@ export default function CreateDemand() {
                         <h1>Demanda</h1>
                         <div id='tags-container'>
                             {demand.map((prod) => (
-                                <MyButton key={prod.id} icon={<DeleteIcon />} handleClick={() => handleToggle(prod)}>
+                                <MyButton
+                                    key={prod.id}
+                                    icon={<DeleteIcon />}
+                                    handleClick={() => handleToggle(prod)}
+                                >
                                     {prod.modelo}
+                                    <input
+                                        type="number"
+                                        placeholder="Pares"
+                                        onChange={(event) => handleChangePairs(event, prod)}
+                                    />
                                 </MyButton>
                             ))}
                         </div>

@@ -370,6 +370,18 @@ export const HistoryStyled = styled.div`
 
             #history{
                 overflow-y: scroll;
+                align-items: center;
+
+                #Demand{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+
+                    #icon-button{
+                        width: max(5%, 40px);
+                        width: 1/1;
+                    }
+                }
             }
 
             div{

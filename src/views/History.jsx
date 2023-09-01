@@ -4,13 +4,17 @@ import { HistoryStyled } from '../styles/views'
 import Header from '../components/Header';
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../service/config'
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { useNavigate } from 'react-router-dom';
 
-import { Button } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 
 export default function History() {
 
     const [history, setHistory] = useState([])
     const [activeHistory, setActiveHistory] = useState(null)
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         (async () => {
@@ -67,9 +71,14 @@ export default function History() {
                                 const dataFormatada = formatadorData.format(date);
 
                                 return (
-                                    <Button variant="outlined" color='secondary' onClick={() => setActiveHistory(demand)}>
-                                        {dataFormatada}
-                                    </Button>
+                                    <div id="Demand">
+                                        <Button variant="outlined" color='secondary' onClick={() => setActiveHistory(demand)}>
+                                            {dataFormatada}
+                                        </Button>
+                                        <IconButton id="icon-button" onClick={() => navigate("/view/"+demand.id)}>
+                                            <VisibilityIcon />
+                                        </IconButton>
+                                    </div>
                                 )
                             })
                         }
@@ -82,8 +91,8 @@ export default function History() {
                                         {
                                             activeHistory.products.map(prod => <li>{prod.modelo}</li>)
                                         }
-                                    </>: <span>Escolha uma Demanda do Histórico</span>
-                                    
+                                    </> : <span>Escolha uma Demanda do Histórico</span>
+
                             }
                         </div>
                     </div>

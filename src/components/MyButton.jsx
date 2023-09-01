@@ -4,11 +4,14 @@ import Paper from "@mui/material/Paper"
 
 import { MyButtonStyled } from '../styles/components'
 
-export default function MyButton({ children, icon, handleClick }) {
+export default function MyButton({ children, icon, handleClick, active_pairs, input_pairs }) {
     return (
         <MyButtonStyled >
             <Paper id="tag" elevation={5}>
-                {children}
+                <div>{children}</div>
+                {active_pairs ? 
+                    input_pairs : null
+                }
             </Paper>
             <Paper id="icon" elevation={5} onClick={handleClick}>
                 {icon}
