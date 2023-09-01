@@ -405,8 +405,8 @@ export const HistoryStyled = styled.div`
                     
                     &:hover{
                         border-color: #fff;
-                        opacity: 0.8;
-                        scale: 1.03;
+                        color: #b8c2f5;
+                        border-color: #b8c2f5;
                     }
                 }
             }

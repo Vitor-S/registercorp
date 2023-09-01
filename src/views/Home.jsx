@@ -8,9 +8,24 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { auth } from '../service/config';
 
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { onAuthStateChanged } from 'firebase/auth'
+import CircularProgress from '@mui/material/CircularProgress';
+
 export default function Home() {
 
-    const user = auth.currentUser
+    const navigate= useNavigate()
+
+    const [userLogged, setUserLogged] = useState(null)
+
+    useEffect(() => {
+        onAuthStateChanged(auth, (user) => {
+            if (!user) navigate('/login')
+            else setUserLogged(user)
+        });
+    }, [userLogged])
 
     return (
         <HomeStyled>
@@ -18,7 +33,7 @@ export default function Home() {
             <main>
                 <div>
                     {
-                        user && user.email == "administrador@registercorp.com" ?
+                        userLogged && userLogged.email == "administrador@registercorp.com" ?
                             <>
                                 <Link to="/Create">
                                     <Button variant="outlined">
