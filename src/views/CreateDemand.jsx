@@ -48,7 +48,7 @@ export default function CreateDemand() {
 
     const handleChangePairs = (event, prod) => {
         const updatedPairs = { ...pairInputs };
-    
+
         if (event.target.value === "") {
             // Se o valor do input for vazio, remova a entrada do estado pairInputs
             delete updatedPairs[prod.id];
@@ -56,10 +56,10 @@ export default function CreateDemand() {
             // Caso contrário, atualize o estado pairInputs com o novo valor
             updatedPairs[prod.id] = event.target.value;
         }
-    
+
         setPairInputs(updatedPairs);
     }
-    
+
 
     const handleCreateDemand = () => {
         Swal.fire({
@@ -120,9 +120,7 @@ export default function CreateDemand() {
                                     key={prod.id}
                                     icon={<AddIcon />}
                                     handleClick={() => handleToggle(prod)}
-                                >
-                                    {prod.modelo}
-                                </MyButton>
+                                    title={prod.modelo}/>
                             ))}
                         </div>
                     </div>
@@ -134,22 +132,22 @@ export default function CreateDemand() {
                                     key={prod.id}
                                     icon={<DeleteIcon />}
                                     handleClick={() => handleToggle(prod)}
-                                >
-                                    {prod.modelo}
-                                    <input
-                                        type="number"
-                                        placeholder="Pares"
-                                        onChange={(event) => handleChangePairs(event, prod)}
-                                    />
-                                </MyButton>
+                                    title={prod.modelo}
+                                    input={
+                                        <input
+                                            type="number"
+                                            placeholder="Pares"
+                                            onChange={(event) => handleChangePairs(event, prod)}
+                                        />
+                                    } />
                             ))}
                         </div>
                     </div>
                 </section>
 
-                <Button variant="contained" onClick={handleCreateDemand}>
+                <button variant="contained" onClick={handleCreateDemand}>
                     Criar Demanda
-                </Button>
+                </button>
             </main>
         </CreateDStyled>
     );

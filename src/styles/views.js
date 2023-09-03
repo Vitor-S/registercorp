@@ -1,86 +1,110 @@
 import { styled } from 'styled-components'
 
 export const LoginStyled = styled.div`
-    background-color: #5c6ffa;
+    background-color: #8fcde3;
 
     main{
         width: 100vw;
         display: flex;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         height: 100vh;
 
-        form{
+        #logo-wrapper{
             display: flex;
-            flex-direction: column;
-            padding: 2vh 3vh;
-            width: max(300px, 20vw);
-            height: max(350px, 35vh);
-            -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-            box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-            justify-content: space-around;
-            background-color: #fff;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
 
-            #welcome{
-                font-size: 1.5rem;
-                text-align: center;
+            #logo{
+                width: 75%;
             }
+        }
 
-            #input-picture{
-                display: none;
-            }
+        #form-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50vw;
+            height: 100%;
 
-            #label-picture{
+            form{
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 2%;
-                width: 100%;
-                height: 54px;
-                border-radius: 4px;
-
-                font-family: "Roboto","Helvetica","Arial",sans-serif;
-                font-weight: 400;
-                font-size: 1.2rem;
-                line-height: 1.4375em;
-                letter-spacing: 0.00938em;
-                color: #666666;
-                border: 1px solid #c4c4c4;
-
-                &:hover{
+                flex-direction: column;
+                padding: 2vh 3vh;
+                width: max(300px, 70%);
+                height: max(350px, 43%);
+                -webkit-box-shadow: 5px 5px 5px 0px rgba(151,185,208,1);
+                -moz-box-shadow: 5px 5px 5px 0px rgba(151,185,208,1);
+                box-shadow: 5px 5px 5px 0px rgba(151,185,208,1);
+                justify-content: space-around;
+                background-color: #fff;
+    
+                #welcome{
+                    font-size: 1.5rem;
+                    text-align: center;
+                }
+    
+                #input-picture{
+                    display: none;
+                }
+    
+                #label-picture{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 2%;
+                    width: 100%;
+                    height: 54px;
+                    border-radius: 4px;
+    
+                    font-family: "Roboto","Helvetica","Arial",sans-serif;
+                    font-weight: 400;
+                    font-size: 1.2rem;
+                    line-height: 1.4375em;
+                    letter-spacing: 0.00938em;
+                    color: #666666;
+                    border: 1px solid #c4c4c4;
+    
+                    &:hover{
+                        cursor: pointer;
+                        color: #424242;
+                        border: 1px solid #424242;
+                    }
+                }
+    
+                button{
+                    background-color: #20435d;
+                    height: 50px;
+                    font-weight: 500;
+                    font-size: 1.1rem;
                     cursor: pointer;
-                    color: #424242;
-                    border: 1px solid #424242;
+                    color: white;
                 }
-            }
-
-            button{
-                height: 50px;
-            }
-
-            span{
-                text-align:center;
-
-                a{
-                    color: blue;
-                    text-decoration: underline;
+    
+                span{
+                    text-align:center;
+    
+                    a{
+                        color: blue;
+                        text-decoration: underline;
+                    }
                 }
+    
             }
-
         }
     }
 `
 
 export const HomeStyled = styled.div`
-    background-color: #5c6ffa;
+    background-color: #a5cae4;
 
     main{
         /* background-color: lightcoral; */
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 100px);
 
         div{
             width: 50%;
@@ -91,17 +115,30 @@ export const HomeStyled = styled.div`
             align-items: center;
         }
 
-        button{
+        a{
             display: flex;
-            justify-content: space-evenly;
-            width: max(250px, 18vw);
-            height: 50px;
-            font-size: max(15px, 1.2vw);
-            color: #fff;
-            border: 1px solid #fff;
+
+            button{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                width: max(250px, 25vw);
+                height: 7vh;
+                font-size: max(15px, 1.8vw);
+                color: #fff;
+                background-color: #20435d;
+                cursor: pointer;
+            }
+        }
+
+        #logo-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             
-            &:hover{
-                border: 1px solid #fff;
+            #logo{
+                width: 90%;
             }
         }
     }
@@ -118,7 +155,7 @@ export const HomeStyled = styled.div`
 `
 
 export const CreateStyled = styled.div`
-    background-color: #5c6ffa;
+    background-color: #a5cae4;
 
     main{
         width: 100vw;
@@ -127,7 +164,7 @@ export const CreateStyled = styled.div`
         justify-content: center;
         align-items: center;
         color: #fff;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 100px);
         
         form{
             display: grid;
@@ -136,9 +173,12 @@ export const CreateStyled = styled.div`
             gap: 2vw;
 
             button{
-                grid-column: span 3;
-                font-weight: bold;
-                /* transform: translateX(.7%); */
+                font-weight: 600;
+                font-size: 1.2vw;
+                background-color: #20435d;
+                color: #fff;
+                border: none;
+                cursor: pointer;
             }
 
             .form-division{
@@ -151,9 +191,9 @@ export const CreateStyled = styled.div`
                 background-color: #fff;
                 justify-content: space-around;
 
-                -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-                -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
-                box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, .4);
+                -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, .4);
+                box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, .4);
 
                 textarea{
                     width: 90%;
@@ -172,7 +212,7 @@ export const CreateStyled = styled.div`
 `
 
 export const ProductsStyled = styled.div`
-    background-color: #5c6ffa;
+    background-color: #a5cae4;
 
     main{
         display: flex;
@@ -180,6 +220,15 @@ export const ProductsStyled = styled.div`
         padding: 20px 50px;
         gap: 2vh;
         height: calc(100vh - 120px);
+
+        #button{
+            background-color: #20435d;
+            border: none;
+            color: #fff;
+            font-size: 1.4vw;
+            cursor: pointer;
+            font-weight: bold;
+        }
     
     }
 
@@ -191,22 +240,50 @@ export const ProductsStyled = styled.div`
 `
 
 export const ViewStyled = styled.div`
-    background-color: #5c6ffa;
+    background-color: #a5cae4;
 
-    header{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 100px;
+    #main-header{
+        display: grid;
+        grid-template-columns: 1fr 8fr 1fr;
+        background-color: #387ca5;
+        height: 70px;
 
-        nav{
-            width: 80%;
+        div{
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+        }
 
-            h1{
+        #options{
+            justify-content: start;
+            gap: 20px;
+            
+            button{
+                width: 20%;
+                height: 60%;
+                background-color: #20435d;
+                border: none;
                 color: #fff;
+                font-size: 1.1vw;
+                cursor: pointer;
+            }
+            
+            div{
+                display: flex;
+                justify-content: space-between;
+                width: 20%;
+                height: 60%;
+                font-size: 1.1vw;
+                background-color: #20435d;
+                user-select: none;
+                
+                span{
+                    color: #fff;
+                }
+
+                svg{
+                    font-size: 1.5vw;
+                }
             }
         }
 
@@ -221,7 +298,7 @@ export const ViewStyled = styled.div`
     }
 
     main{
-        height: calc(100vh - 100px);
+        height: calc(100vh - 70px);
 
         header{
             height: auto;
@@ -230,7 +307,7 @@ export const ViewStyled = styled.div`
                 width: 50%;
                 height: 100%;
                 border-radius: 0;
-                color: #fff;
+                color: #20435d;
                 font-size: max(20px, 1.3vw);
             }
         }
@@ -276,6 +353,7 @@ export const ViewStyled = styled.div`
             padding: 20px 0;
         }
     }
+    
 `
 
 export const CreateDStyled = styled.div`
@@ -283,11 +361,11 @@ export const CreateDStyled = styled.div`
     main{
         display: flex;
         flex-direction: column;
-        background-color: #5c6ffa;
+        background-color: #a5cae4;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 100px);
 
         section{
             width: 80%;
@@ -332,7 +410,13 @@ export const CreateDStyled = styled.div`
                 }
 
                 h1{
+                    display: flex;
+                    justify-content: center;
+                    width: 65%;
+                    padding: 2%;
                     color: #fff;
+                    background-color: #20435d;
+                    transform: translateX(-8.1%);
                 }
 
             }
@@ -340,18 +424,23 @@ export const CreateDStyled = styled.div`
 
         button{
             padding: 15px 50px;
-            font-weight: bold;
+            font-weight: 500;
+            border: none;
+            background-color: #20435d;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1.2vw;
         }
     }
 `
 
 export const HistoryStyled = styled.div`
-    background-color: #5c6ffa;
+    background-color: #a5cae4;
 
     main{
         display: flex;
         flex-direction: column;
-        height: calc(100vh - 80px);
+        height: calc(100vh - 100px);
 
         header{
             width: 100%;
@@ -359,7 +448,12 @@ export const HistoryStyled = styled.div`
             justify-content: space-around;
 
             h2{
+                display: flex;
+                justify-content: center;
+                padding: .5% 0;
+                width: 20%;
                 color: #fff;
+                background-color: #20435d;
             }
         }
 
@@ -377,6 +471,15 @@ export const HistoryStyled = styled.div`
                     flex-direction: row;
                     justify-content: center;
 
+                    #demand-button{
+                        background-color: #20435d;
+                        padding: 3% 0%;
+                        width: 80%;
+                        font-size: 1vw;
+                        border: none;       
+                        cursor: pointer;             
+                    }
+
                     #icon-button{
                         width: max(5%, 40px);
                         width: 1/1;
@@ -393,14 +496,14 @@ export const HistoryStyled = styled.div`
 
                 #history-info{
                     text-align: center;
-                    border: 1px solid #fff;
+                    border: 1px solid #20435d;
                     width: 40%;
                     padding: 20px 0;
-                    color: #fff;
+                    color: #20435d;
                 }
 
                 span{
-                    color: #fff;
+                    color: #20435d;
                     font-style: italic;
                 }
                 
@@ -414,12 +517,6 @@ export const HistoryStyled = styled.div`
                     border-color: #fff;
                     color: #fff;
                     transition: ease-out .1s;
-                    
-                    &:hover{
-                        border-color: #fff;
-                        color: #b8c2f5;
-                        border-color: #b8c2f5;
-                    }
                 }
             }
         }

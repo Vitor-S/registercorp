@@ -15,6 +15,7 @@ import { useState } from 'react';
 import { signOut } from 'firebase/auth'
 import { auth } from '../service/config';
 import { notifyError } from '../utils/toastfy';
+import horizontal_light from '../assets/logo-horizontal-light.png'
 
 export default function Header() {
 
@@ -55,7 +56,7 @@ export default function Header() {
 
     return user && user.email == "administrador@registercorp.com" ? (
         <HeaderStyled>
-            <h3>REGISTERCORP</h3>
+            <img id="logo" src={horizontal_light} />
             <div>
                 <IconButton
                     id="fade-button"
@@ -65,7 +66,7 @@ export default function Header() {
                     aria-expanded={open ? 'true' : undefined}
                     onClick={handleClick}
                 >
-                    <MenuRoundedIcon fontSize='large' sx={{ color: '#fff' }} />
+                <MenuRoundedIcon fontSize='large' sx={{ color: '#fff' }} />
                 </IconButton>
                 <Menu
                     id="fade-menu"

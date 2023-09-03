@@ -9,10 +9,11 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form'
 
 import { ToastContainer } from 'react-toastify';
-import { notifyError, notifySuccess } from '../utils/toastfy' 
+import { notifyError, notifySuccess } from '../utils/toastfy'
 
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../service/config'
+import vertical_dark from '../assets/logo-vertical-dark.png'
 
 import ErrorManager from '../utils/errorManager'
 
@@ -45,20 +46,25 @@ export default function Login() {
         <LoginStyled>
             <ToastContainer />
             <main>
-                <form onSubmit={Submit(handleSubmit)}>
-                    <span id="welcome">Bem-vindo</span>
-                    <TextField label="Email" error={Boolean(errors.email)} helperText={errors.email?.message} {...register("email")} />
+                <div id="form-wrapper">
+                    <form onSubmit={Submit(handleSubmit)}>
+                        <span id="welcome">Bem-vindo</span>
+                        <TextField label="Email" error={Boolean(errors.email)} helperText={errors.email?.message} {...register("email")} />
 
-                    <TextField type='password' label="Senha" error={Boolean(errors.password)} helperText={errors.password?.message}
-                        {...register("password")} />
+                        <TextField type='password' label="Senha" error={Boolean(errors.password)} helperText={errors.password?.message}
+                            {...register("password")} />
 
-                    <Button variant="contained" type="submit">
-                        Entrar
-                    </Button>
-                    <span>
-                        Entre na plataforma da Registercorp
-                    </span>
-                </form>
+                        <button variant="contained" type="submit">
+                            ENTRAR
+                        </button>
+                        <span>
+                            Entre na plataforma Registercorp
+                        </span>
+                    </form>
+                </div>
+                <div id="logo-wrapper">
+                    <img id="logo" src={vertical_dark} />
+                </div>
             </main>
         </LoginStyled>
     )

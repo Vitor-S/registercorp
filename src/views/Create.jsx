@@ -1,8 +1,6 @@
 import React from 'react'
 
 import { CreateStyled } from '../styles/views';
-import IconButton from '@mui/material/IconButton';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
 
@@ -79,9 +77,10 @@ export default function Create() {
                         <textarea placeholder="Regulagem dos Equipamentos" {...register("regulagem_dos_equipamentos")}/>
                         <textarea placeholder="Modo de Preparo das Peças" {...register("modo_de_preparo_das_peças")}/>
                     </div>
-                    <Button variant="contained" type="submit">
-                        Adicionar Produto
-                    </Button>
+                    <span></span>
+                    <button type="submit">
+                        ADICIONAR PRODUTO
+                    </button>
                 </form>
             </main>
         </CreateStyled>

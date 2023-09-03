@@ -55,17 +55,18 @@ const Product = ({ data }) => {
     }
 
     return (
-        <ButtonGroup variant="contained" color="secondary" sx={{ width: 'max(300px, 15vw)', height: 70 }}>
-            <Button fullWidth size='large' variant="outlined"
-                sx={{ color: '#fff' }}>
+        <ButtonGroup sx={{ height: 70, gap: 2 }}>
+            <button id="button" style={{width: '25vw'}}>
                 {data.modelo}
-            </Button>
-            <Button size='large' variant="outlined" onClick={() => navigate("/Edit/"+data.id)}>
-                <EditIcon sx={{ color: '#fff', borderLeft: 'none' }} />
-            </Button>
-            <Button size='large' variant="outlined" onClick={() => handleDelete(data.id)}>
-                <DeleteIcon sx={{ color: '#fff' }} />
-            </Button>
+            </button>
+            <button id="button" style={{aspectRatio: '1/1', 
+                backgroundColor: '#fff', color: '#20435d'}} onClick={() => navigate("/Edit/"+data.id)}>
+                <EditIcon/>
+            </button>
+            <button id="button" style={{aspectRatio: '1/1', 
+                backgroundColor: '#fff', color: '#20435d'}} onClick={() => handleDelete(data.id)}>
+                <DeleteIcon/>
+            </button>
         </ButtonGroup>
     )
 }

@@ -8,6 +8,14 @@ import ArrowBackIosNewTwoToneIcon from '@mui/icons-material/ArrowBackIosNewTwoTo
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { Paper } from '@mui/material';
 import Tag from '../components/Tag'
+import { useNavigate } from 'react-router-dom';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Fade from '@mui/material/Fade';
+import { signOut } from 'firebase/auth'
+import { auth } from '../service/config';
+import { notifyError } from '../utils/toastfy';
 
 import { useParams } from 'react-router-dom';
 
@@ -21,6 +29,34 @@ export default function View() {
 
     const [products, setProducts] = useState(null)
     const [currentIndex, setCurrentIndex] = useState(0)
+
+
+    const navigate = useNavigate()
+
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
+    const LogOut = () => {
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            navigate('/login')
+        }).catch((error) => {
+            // An error happened.
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            notifyError(errorMessage)
+        });
+    }
+
+
 
     const handleFullscreenClick = () => {
         const element = document.documentElement;
@@ -72,41 +108,63 @@ export default function View() {
 
     if (products) return (
         <ViewStyled>
-            <header>
-                <IconButton onClick={handleFullscreenClick}>
-                    {
-                        isFullscreen ?
-                            <FullscreenExitIcon /> :
-                            <FullscreenIcon />
-                    }
-                </IconButton>
-                <nav>
-                    <IconButton sx={{ opacity: currentIndex - 1 < 0 ? '0.5' : '1' }}
-                        disabled={currentIndex - 1 < 0}
-                        onClick={() => setCurrentIndex(currentIndex - 1)}>
-                        <ArrowBackIosNewTwoToneIcon />
+            <header id="main-header">
+                <div id="fullscreen">
+                    <IconButton onClick={handleFullscreenClick}>
+                        {
+                            isFullscreen ?
+                                <FullscreenExitIcon /> :
+                                <FullscreenIcon />
+                        }
                     </IconButton>
-                    <h1>
-                        {products[currentIndex].modelo}
-                    </h1>
-                    <IconButton sx={{ opacity: currentIndex + 1 >= products.length ? '0.5' : '1' }}
-                        disabled={currentIndex + 1 >= products.length}
-                        onClick={() => setCurrentIndex(currentIndex + 1)}>
-                        <ArrowForwardIosIcon />
+                </div>
+                <div id="options">
+                    <button onClick={toggleActiveMode}>PRÉ PRODUÇÃO</button>
+                    <button onClick={toggleActiveMode}>PRODUÇÃO</button>
+                    <div>
+                        <IconButton sx={{ opacity: currentIndex - 1 < 0 ? '0.5' : '1' }}
+                            disabled={currentIndex - 1 < 0}
+                            onClick={() => setCurrentIndex(currentIndex - 1)}>
+                            <ArrowBackIosNewTwoToneIcon style={{ color: '#fff' }} />
+                        </IconButton>
+                        <span>{products[currentIndex].modelo.toUpperCase()}</span>
+                        <IconButton sx={{ opacity: currentIndex + 1 >= products.length ? '0.5' : '1' }} disabled={currentIndex + 1 >= products.length}
+                            onClick={() => setCurrentIndex(currentIndex + 1)}>
+                            <ArrowForwardIosIcon style={{ color: '#fff' }} />
+                        </IconButton>
+                    </div>
+                </div>
+                <div id="menu">
+                    <IconButton
+                        id="fade-button"
+                        variant="contained"
+                        aria-controls={open ? 'fade-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? 'true' : undefined}
+                        onClick={handleClick}
+                    >
+                        <MenuRoundedIcon fontSize='large' sx={{ color: '#fff' }} />
                     </IconButton>
-                </nav>
+                    <Menu
+                        id="fade-menu"
+                        MenuListProps={{
+                            'aria-labelledby': 'fade-button',
+                        }}
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        TransitionComponent={Fade}
+                    >
+                        <MenuItem onClick={() => navigate("/")}>Início</MenuItem>
+                        <MenuItem onClick={() => navigate("/Create")}>Criar Produto</MenuItem>
+                        <MenuItem onClick={() => navigate("/Products")}>Ver Produtos</MenuItem>
+                        <MenuItem onClick={() => navigate("/CreateDemand")}>Criar Demanda</MenuItem>
+                        <MenuItem onClick={() => navigate("/History")}>Ver Histórico</MenuItem>
+                        <MenuItem onClick={LogOut}>Sair</MenuItem>
+                    </Menu>
+                </div>
             </header>
             <main>
-                <header>
-                    <IconButton onClick={toggleActiveMode}
-                        sx={{ borderBottom: isProduction ? 'none' : '2px solid #fff' }}>
-                        Pré Produção
-                    </IconButton>
-                    <IconButton onClick={toggleActiveMode}
-                        sx={{ borderBottom: isProduction ? '2px solid #fff' : 'none' }}>
-                        Produção
-                    </IconButton>
-                </header>
                 {
                     !isProduction ?
                         <section id="pre-production">

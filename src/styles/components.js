@@ -16,15 +16,19 @@ export const HeaderStyled = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
+    height: 100px;
     color: #fff;
     padding: 0 3%;
-    background-color: #5c6ffa;
+    background-color: #387ca5;
+
+    #logo{
+        height: 80%;
+    }
 `
 
 export const MyButtonStyled = styled.div`
     display: flex;
-    gap: 10px;
+    gap: 25px;
     
     #tag{
         display: flex;
@@ -36,10 +40,32 @@ export const MyButtonStyled = styled.div`
         padding: 3% 0;
         font-weight: bold;
         font-size: max(13px, 1.2vw);
-        
-        input{
+
+        #title, #paper{
             width: 100%;
-            height: 40%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding: 0 4%;
+        }
+
+        #title{
+            background-color: #20435d;
+            color: #fff;
+        }
+        
+        #paper{
+            background-color: #fff;
+
+            input{
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                border: none;
+                outline: none;
+                font-size: max(1rem, 1vw);
+            }
         }
     }
     
@@ -47,9 +73,9 @@ export const MyButtonStyled = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        min-width: 50px;
-        min-height: 50px;
         cursor: pointer;
+        color: #20435d;
+        font-weight: bold;
     }
 `
 

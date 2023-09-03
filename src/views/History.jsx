@@ -46,7 +46,7 @@ export default function History() {
             <Header />
             <main>
                 <header>
-                    <h2 style={{ transform: 'translateX(25%)' }}>Histórico</h2>
+                    <h2>Histórico</h2>
                     <h2>Produtos</h2>
                 </header>
                 <section>
@@ -72,10 +72,11 @@ export default function History() {
 
                                 return (
                                     <div id="Demand">
-                                        <Button variant="outlined" color='secondary' onClick={() => setActiveHistory(demand)}>
+                                        <button id="demand-button" variant="outlined" onClick={() => setActiveHistory(demand)}>
                                             {dataFormatada}
-                                        </Button>
-                                        <IconButton id="icon-button" onClick={() => navigate("/view/"+demand.id)}>
+                                        </button>
+                                        <IconButton id="icon-button" style={{color: '#20435d'}}
+                                            onClick={() => navigate("/view/"+demand.id)}>
                                             <VisibilityIcon />
                                         </IconButton>
                                     </div>

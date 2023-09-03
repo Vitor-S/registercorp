@@ -7,16 +7,16 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import { auth } from '../service/config';
+import logo_light from '../assets/logo-light.png'
 
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { onAuthStateChanged } from 'firebase/auth'
-import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Home() {
 
-    const navigate= useNavigate()
+    const navigate = useNavigate()
 
     const [userLogged, setUserLogged] = useState(null)
 
@@ -36,29 +36,31 @@ export default function Home() {
                         userLogged && userLogged.email == "administrador@registercorp.com" ?
                             <>
                                 <Link to="/Create">
-                                    <Button variant="outlined">
+                                    <button>
                                         Criar Produto
-                                    </Button>
+                                    </button>
                                 </Link>
                                 <Link to="/Products">
-                                    <Button variant="outlined">
+                                    <button>
                                         Ver Produtos
-                                    </Button>
+                                    </button>
                                 </Link>
                             </> : <></>
                     }
                     <Link to="/CreateDemand">
-                        <Button variant="outlined">
+                        <button>
                             Criar Demanda
-                        </Button>
+                        </button>
                     </Link>
                     <Link to="/History">
-                        <Button variant="outlined">
+                        <button>
                             Ver Histórico
-                        </Button>
+                        </button>
                     </Link>
                 </div>
-                <div></div>
+                <div id="logo-wrapper">
+                    <img id="logo" src={logo_light} />
+                </div>
             </main>
         </HomeStyled>
 

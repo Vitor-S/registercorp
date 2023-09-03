@@ -93,9 +93,10 @@ export default function Edit() {
                             <textarea {...register("modo_de_preparo_das_peças")} placeholder="Modo de Preparo das Peças" value={product.modo_de_preparo_das_peças} onChange={e => setProduct({ ...product, modo_de_preparo_das_peças: e.target.value })} />
 
                         </div>
-                        <Button variant="contained" type="submit">
+                        <span/>
+                        <button variant="contained" type="submit">
                             Atualizar Produto
-                        </Button>
+                        </button>
                     </form>
                 }
             </main>
