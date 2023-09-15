@@ -113,7 +113,7 @@ export default function CreateDemand() {
             <main>
                 <section>
                     <div id="division">
-                        <h1>Products</h1>
+                        <h1>Produtos</h1>
                         <div id='tags-container'>
                             {products.map((prod) => (
                                 <MyButton
