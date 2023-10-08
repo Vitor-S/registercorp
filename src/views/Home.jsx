@@ -59,7 +59,7 @@ export default function Home() {
                     </Link>
                 </div>
                 <div id="logo-wrapper">
-                    <img id="logo" src="https://snz04pap002files.storage.live.com/y4mXpyoqM-Ykvhdj8QT9mBBez7k6qHxbTuE59T1fCMZ-X9ERASLy7KnMoSdvCiymN6Dxejc_nj9tGE2-6Q_Xz009MlSpyBekueQNy4fgB29m4uWh1asZXs5xqu-tabJWGvIAFeBFqSm4OdW_hi487qyl6HAShxrVY70iAnNOgVyDDcULQ07Bw3CrmJ4drlMhQLaFLTQ9xwp1vh6aA8rylu5hAQLc7mQWZ83WUtoC7LrUMA?encodeFailures=1&width=219&height=219" />
+                    <img id="logo" src="https://1drv.ms/i/s!AsMEqYw_0wBpqspE32ZNi2P9DfIfVA?e=UzE9tL" />
                 </div>
             </main>
         </HomeStyled>
