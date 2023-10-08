@@ -59,7 +59,7 @@ export default function Home() {
                     </Link>
                 </div>
                 <div id="logo-wrapper">
-                    <img id="logo" src="https://1drv.ms/i/s!AsMEqYw_0wBpqspE32ZNi2P9DfIfVA?e=UzE9tL" />
+                    <img id="logo" src={logo_light} />
                 </div>
             </main>
         </HomeStyled>
