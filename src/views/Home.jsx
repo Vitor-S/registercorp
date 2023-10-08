@@ -37,7 +37,7 @@ export default function Home() {
                             <>
                                 <Link to="/Create">
                                     <button>
-                                        Criar Produto
+                                        Registrar Produto
                                     </button>
                                 </Link>
                                 <Link to="/Products">

@@ -120,7 +120,7 @@ export default function CreateDemand() {
                                     key={prod.id}
                                     icon={<AddIcon />}
                                     handleClick={() => handleToggle(prod)}
-                                    title={prod.modelo}/>
+                            np        title={prod.modelo}/>
                             ))}
                         </div>
                     </div>
