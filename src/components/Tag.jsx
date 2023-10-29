@@ -8,7 +8,7 @@ export default function Tag({ prodKey, prodValue }) {
         <TagStyled>
             <Paper>
                 <div id="key">{prodKey}</div>
-                <div>{prodValue}</div>
+                <div id="value">{prodValue}</div>
             </Paper>
         </TagStyled>
     )

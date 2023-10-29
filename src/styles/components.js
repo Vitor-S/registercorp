@@ -28,8 +28,7 @@ export const HeaderStyled = styled.header`
 
 export const MyButtonStyled = styled.div`
     display: flex;
-    gap: 25px;
-    
+    gap: 25px;    
     #tag{
         display: flex;
         flex-direction: column;
@@ -80,21 +79,25 @@ export const MyButtonStyled = styled.div`
 `
 
 export const TagStyled = styled.div`
-    font-size: 1.4vw;
-
+    width: 100%;
+    height: 12vh;
+    
     #key{
-        width: 40%;
         text-align: center;
         font-weight: bold;
+        font-size: max(1.3vw, 2.2vw);
     }
-
+    
+    #value{
+        text-align: center;
+        font-weight: 300;
+        font-size: max(1.3vw, 2vw);
+    }
+    
     div{
-        width: max(200px, 25vw);
-        height: max(40px, 4.5vw);
         display: flex;
-        align-items: center;
-        justify-content: space-around;
-        padding: 15px 20px;
-        font-size: max(13px, 1.5vw);
+        flex-direction: column;
+        justify-content: center;
+        padding: 5px;
     }
-`   
+`

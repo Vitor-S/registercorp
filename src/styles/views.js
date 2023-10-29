@@ -1,55 +1,55 @@
-import { styled } from 'styled-components'
+import { styled } from "styled-components";
 
 export const LoginStyled = styled.div`
     background-color: #8fcde3;
 
-    main{
+    main {
         width: 100vw;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
 
-        #logo-wrapper{
+        #logo-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 50vw;
 
-            #logo{
+            #logo {
                 width: 75%;
             }
         }
 
-        #form-wrapper{
+        #form-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 50vw;
             height: 100%;
 
-            form{
+            form {
                 display: flex;
                 flex-direction: column;
                 padding: 2vh 3vh;
                 width: max(300px, 70%);
                 height: max(350px, 43%);
-                -webkit-box-shadow: 5px 5px 5px 0px rgba(151,185,208,1);
-                -moz-box-shadow: 5px 5px 5px 0px rgba(151,185,208,1);
-                box-shadow: 5px 5px 5px 0px rgba(151,185,208,1);
+                -webkit-box-shadow: 5px 5px 5px 0px rgba(151, 185, 208, 1);
+                -moz-box-shadow: 5px 5px 5px 0px rgba(151, 185, 208, 1);
+                box-shadow: 5px 5px 5px 0px rgba(151, 185, 208, 1);
                 justify-content: space-around;
                 background-color: #fff;
-    
-                #welcome{
+
+                #welcome {
                     font-size: 1.5rem;
                     text-align: center;
                 }
-    
-                #input-picture{
+
+                #input-picture {
                     display: none;
                 }
-    
-                #label-picture{
+
+                #label-picture {
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -57,23 +57,23 @@ export const LoginStyled = styled.div`
                     width: 100%;
                     height: 54px;
                     border-radius: 4px;
-    
-                    font-family: "Roboto","Helvetica","Arial",sans-serif;
+
+                    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
                     font-weight: 400;
                     font-size: 1.2rem;
                     line-height: 1.4375em;
                     letter-spacing: 0.00938em;
                     color: #666666;
                     border: 1px solid #c4c4c4;
-    
-                    &:hover{
+
+                    &:hover {
                         cursor: pointer;
                         color: #424242;
                         border: 1px solid #424242;
                     }
                 }
-    
-                button{
+
+                button {
                     background-color: #20435d;
                     height: 50px;
                     font-weight: 500;
@@ -81,32 +81,31 @@ export const LoginStyled = styled.div`
                     cursor: pointer;
                     color: white;
                 }
-    
-                span{
-                    text-align:center;
-    
-                    a{
+
+                span {
+                    text-align: center;
+
+                    a {
                         color: blue;
                         text-decoration: underline;
                     }
                 }
-    
             }
         }
     }
-`
+`;
 
 export const HomeStyled = styled.div`
     background-color: #a5cae4;
 
-    main{
+    main {
         /* background-color: lightcoral; */
         display: flex;
         align-items: center;
         justify-content: space-evenly;
         height: calc(100vh - 100px);
 
-        div{
+        div {
             width: 50%;
             gap: 2vw;
             display: flex;
@@ -115,10 +114,10 @@ export const HomeStyled = styled.div`
             align-items: center;
         }
 
-        a{
+        a {
             display: flex;
 
-            button{
+            button {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -132,32 +131,32 @@ export const HomeStyled = styled.div`
             }
         }
 
-        #logo-wrapper{
+        #logo-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
-            
-            #logo{
+
+            #logo {
                 width: 90%;
             }
         }
     }
 
     @media (max-width: 600px) {
-        main{
+        main {
             flex-direction: column;
 
-            button{
+            button {
                 font-size: max(15px, 3vw);
             }
         }
     }
-`
+`;
 
 export const CreateStyled = styled.div`
     background-color: #a5cae4;
 
-    main{
+    main {
         width: 100vw;
         display: flex;
         flex-direction: column;
@@ -165,14 +164,14 @@ export const CreateStyled = styled.div`
         align-items: center;
         color: #fff;
         height: calc(100vh - 100px);
-        
-        form{
+
+        form {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 10fr 1fr;
             gap: 2vw;
 
-            button{
+            button {
                 font-weight: 600;
                 font-size: 1.2vw;
                 background-color: #20435d;
@@ -181,7 +180,7 @@ export const CreateStyled = styled.div`
                 cursor: pointer;
             }
 
-            .form-division{
+            .form-division {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -191,14 +190,14 @@ export const CreateStyled = styled.div`
                 background-color: #fff;
                 justify-content: space-around;
 
-                -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, .4);
-                -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, .4);
-                box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, .4);
+                -webkit-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.4);
+                -moz-box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.4);
+                box-shadow: 5px 5px 5px 0px rgba(50, 50, 50, 0.4);
 
-                textarea{
+                textarea {
                     width: 90%;
                     height: 22%;
-                    padding: .85vw;
+                    padding: 0.85vw;
                     font-size: max(16px, 1.1vw);
 
                     &::placeholder {
@@ -208,20 +207,19 @@ export const CreateStyled = styled.div`
             }
         }
     }
-    
-`
+`;
 
 export const ProductsStyled = styled.div`
     background-color: #a5cae4;
 
-    main{
+    main {
         display: flex;
         flex-direction: column;
         padding: 20px 50px;
         gap: 2vh;
         height: calc(100vh - 120px);
 
-        #button{
+        #button {
             background-color: #20435d;
             border: none;
             color: #fff;
@@ -229,36 +227,36 @@ export const ProductsStyled = styled.div`
             cursor: pointer;
             font-weight: bold;
         }
-    
     }
 
     @media (max-width: 400px) {
-        main{
+        main {
             align-items: center;
         }
     }
-`
+`;
 
 export const ViewStyled = styled.div`
     background-color: #a5cae4;
+    overflow-y: hidden;
 
-    #main-header{
+    #main-header {
         display: grid;
         grid-template-columns: 1fr 8fr 1fr;
         background-color: #387ca5;
         height: 70px;
 
-        div{
+        div {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        #options{
+        #options {
             justify-content: start;
             gap: 20px;
-            
-            button{
+
+            button {
                 width: 20%;
                 height: 60%;
                 background-color: #20435d;
@@ -267,8 +265,8 @@ export const ViewStyled = styled.div`
                 font-size: 1.1vw;
                 cursor: pointer;
             }
-            
-            div{
+
+            div {
                 display: flex;
                 justify-content: space-between;
                 width: 20%;
@@ -276,18 +274,18 @@ export const ViewStyled = styled.div`
                 font-size: 1.1vw;
                 background-color: #20435d;
                 user-select: none;
-                
-                span{
+
+                span {
                     color: #fff;
                 }
 
-                svg{
+                svg {
                     font-size: 1.5vw;
                 }
             }
         }
 
-        svg{
+        svg {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -297,13 +295,13 @@ export const ViewStyled = styled.div`
         }
     }
 
-    main{
+    main {
         height: calc(100vh - 70px);
 
-        header{
+        header {
             height: auto;
-                
-            button{
+
+            button {
                 width: 50%;
                 height: 100%;
                 border-radius: 0;
@@ -312,53 +310,60 @@ export const ViewStyled = styled.div`
             }
         }
 
-        #pre-production{
+        #pre-production {
             display: flex;
             width: 100%;
             height: calc(100vh - 195px);
 
-            div{
+            div {
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 width: 100%;
                 height: 100%;
 
-                div{
+                div {
                     display: flex;
                     flex-direction: column;
                     padding: 20px;
                     width: 60%;
                     height: 80%;
 
-                    textarea{
+                    textarea {
                         width: 95%;
                         height: 95%;
                         padding: 15px;
                         font-size: max(16px, 1.2vw);
-                        
                     }
                 }
             }
         }
 
         #production {
-            width: 100%;
-            height: calc(100vh - 195px);
+            height: 100%;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(5, 1fr);
-            justify-items: center;
-            align-items: center;
-            padding: 20px 0;
+            grid-template-columns: 1fr 1fr 0.6fr;
+            gap: 1%;
+            padding: 15px;
+
+            .column{
+                height: 80%;
+                display: grid;
+                grid-template-rows: repeat(6, 1fr);
+                gap: 20px;
+
+                .share{
+                    display: flex;
+                    justify-content: space-around;
+                    gap: 20px;
+                }
+            }
         }
     }
-    
-`
+`;
 
 export const CreateDStyled = styled.div`
-
-    main{
+    main {
         display: flex;
         flex-direction: column;
         background-color: #a5cae4;
@@ -367,21 +372,21 @@ export const CreateDStyled = styled.div`
         align-items: center;
         height: calc(100vh - 100px);
 
-        section{
+        section {
             width: 80%;
             height: 70%;
             display: flex;
             justify-content: center;
 
-            #division{
+            #division {
                 height: 90%;
                 width: 40%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 gap: 20px;
-                
-                #tags-container{
+
+                #tags-container {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -409,7 +414,7 @@ export const CreateDStyled = styled.div`
                     }
                 }
 
-                h1{
+                h1 {
                     display: flex;
                     justify-content: center;
                     width: 65%;
@@ -418,11 +423,10 @@ export const CreateDStyled = styled.div`
                     background-color: #20435d;
                     transform: translateX(-8.1%);
                 }
-
             }
         }
 
-        button{
+        button {
             padding: 15px 50px;
             font-weight: 500;
             border: none;
@@ -432,69 +436,69 @@ export const CreateDStyled = styled.div`
             font-size: 1.2vw;
         }
     }
-`
+`;
 
 export const HistoryStyled = styled.div`
     background-color: #a5cae4;
 
-    main{
+    main {
         display: flex;
         flex-direction: column;
         height: calc(100vh - 100px);
 
-        header{
+        header {
             width: 100%;
             display: flex;
             justify-content: space-around;
 
-            h2{
+            h2 {
                 display: flex;
                 justify-content: center;
-                padding: .5% 0;
+                padding: 0.5% 0;
                 width: 20%;
                 color: #fff;
                 background-color: #20435d;
             }
         }
 
-        section{
+        section {
             display: flex;
             height: calc(100vh - 195px);
             padding: 20px;
 
-            #history{
+            #history {
                 overflow-y: scroll;
                 align-items: center;
 
-                #Demand{
+                #Demand {
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
 
-                    #demand-button{
+                    #demand-button {
                         background-color: #20435d;
                         padding: 3% 0%;
                         width: 80%;
                         font-size: 1vw;
-                        border: none;       
-                        cursor: pointer;             
+                        border: none;
+                        cursor: pointer;
                     }
 
-                    #icon-button{
+                    #icon-button {
                         width: max(5%, 40px);
                         width: 1/1;
                     }
                 }
             }
 
-            div{
+            div {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 width: 50%;
                 gap: 10px;
 
-                #history-info{
+                #history-info {
                     text-align: center;
                     border: 1px solid #20435d;
                     width: 40%;
@@ -502,23 +506,23 @@ export const HistoryStyled = styled.div`
                     color: #20435d;
                 }
 
-                span{
+                span {
                     color: #20435d;
                     font-style: italic;
                 }
-                
-                li{
+
+                li {
                     font-style: italic;
                     font-size: 22px;
                 }
 
-                button{
+                button {
                     width: 50%;
                     border-color: #fff;
                     color: #fff;
-                    transition: ease-out .1s;
+                    transition: ease-out 0.1s;
                 }
             }
         }
     }
-`
+`;
