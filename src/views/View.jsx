@@ -311,13 +311,18 @@ export default function View() {
                                     }
                                 />
                             </div>
-                            <div className="column">
+                            <div id="last-column" className="column">
                                 <Tag
                                     prodKey="Quantidade"
                                     prodValue={
                                         products[currentIndex].quantidade
                                     }
                                 />
+                                <Tag invisible />
+                                <Tag invisible />
+                                <Tag invisible />
+                                <Tag invisible />
+                                <Tag invisible />
                             </div>
                         </section>
                     )}

@@ -80,7 +80,6 @@ export const MyButtonStyled = styled.div`
 
 export const TagStyled = styled.div`
     width: 100%;
-    height: 12vh;
     
     #key{
         text-align: center;
@@ -96,8 +95,8 @@ export const TagStyled = styled.div`
     
     div{
         display: flex;
+        height: min(200px, 13vh);
         flex-direction: column;
         justify-content: center;
-        padding: 5px;
     }
 `

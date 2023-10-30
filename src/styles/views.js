@@ -344,15 +344,14 @@ export const ViewStyled = styled.div`
             display: grid;
             grid-template-columns: 1fr 1fr 0.6fr;
             gap: 1%;
-            padding: 15px;
 
-            .column{
-                height: 80%;
-                display: grid;
-                grid-template-rows: repeat(6, 1fr);
-                gap: 20px;
+            .column {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
 
-                .share{
+                .share {
                     display: flex;
                     justify-content: space-around;
                     gap: 20px;
